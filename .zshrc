@@ -70,13 +70,18 @@ source /usr/share/zsh-plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 function repoGit(){
     test -d .git/
     if [ "$(echo $?)" -eq "0" ]; then
-        message="$1"
-        number="$(echo $message | wc -m)"
-        branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
-        if [ "$number" -gt 4 ]; then
-            git add . ; git commit -m "$message"; git push -u origin $branch
+        git update-index -q --refresh
+        if ! git diff-index --quiet HEAD --; then
+            message="$1"
+            number="$(echo $message | wc -m)"
+            branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+            if [ "$number" -gt 4 ]; then
+                git add . ; git commit -m "$message"; git push -u origin $branch
+            else
+                echo -e "\t[*] Dígite un mensaje mayor a 5 caracteres"
+            fi;
         else
-            echo -e "\t[*] Dígite un mensaje mayor a 5 caracteres"
+            echo -e "\t[*] No hay cambios pendientes para subir"
         fi;
     else
         echo -e "\t[*] Diríjase a un directorio válido"
