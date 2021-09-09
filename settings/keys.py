@@ -60,8 +60,8 @@ keys = [Key(*key[0:]) for key in [
     ([mod, "shift"], "m", lazy.spawn("rofi -show")),
 
     # Browser
-    ([mod], "f", lazy.spawn("firefox")),
-    ([mod], "b", lazy.spawn("brave")),
+    ([mod], "f", lazy.spawn("firejail firefox")),
+    ([mod], "b", lazy.spawn("firejail brave")),
 
     # File Explorer
     ([mod], "e", lazy.spawn("caja")),
@@ -78,6 +78,9 @@ keys = [Key(*key[0:]) for key in [
 
     #Zoom
     ([mod], "z", lazy.spawn("zoom")),
+
+    # slim
+    ([mod], "x", lazy.spawn("slimlock")),
 
     # ------------ Hardware Configs ------------
 
