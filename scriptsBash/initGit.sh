@@ -1,7 +1,7 @@
 #!/bin/bash
-# autor: { fallen }
+# Autor: { Fallen }
 
-#Colores
+# Colores
 greenColour="\e[0;32m\033[1m"
 endColour="\033[0m\e[0m"
 redColour="\e[0;31m\033[1m"
@@ -13,14 +13,14 @@ grayColour="\e[0;37m\033[1m"
 
 trap ctrl_c INT
 
-#Permite detener el proceso con las teclas control + c
+# Permite detener el proceso con las teclas control + c
 function ctrl_c(){
 	echo -e "\n${purpleColour} [*]${endColour}${grayColour}Saliendo...${endColour}"
   sleep 2
 	tput cnorm; exit 0
 }
 
-#Muestra las opciones del comando
+# Muestra las opciones del comando
 function helpPanel(){
   echo -e "\n${purpleColour} [*]${endColour}${yellowColour} Uso: ./startGit${endColour}"
   echo -e "\n\t${purpleColour}-b${endColour}${redColour} \"nameBranch\"${endColour}${yellowColour}\t Especifica el nombre de la rama principal${endColour}"
@@ -29,7 +29,7 @@ function helpPanel(){
 	tput cnorm; exit 0
 }
 
-#Indica el proceso de inicializar el proyecto
+# Indica el proceso de inicializar el proyecto
 function startProcess(){
   tput civis;
   flag=0
@@ -52,7 +52,7 @@ function startProcess(){
   fi
 }
 
-#Verifica si existe una carpeta inicializada de git
+# Verifica si existe una carpeta inicializada de git
 function verifiedFolder(){
   test -d .git/
   if [ "$(echo $?)" -eq "0" ]; then
@@ -61,7 +61,7 @@ function verifiedFolder(){
   fi
 }
 
-#Funcion principal de ejecución
+# Funcion principal de ejecución
 declare -i parameterCount=0; while getopts ":b:r:h" arg; do 
   case $arg in
     b) nameBranch=$OPTARG; let parameterCount+=1 ;;
