@@ -98,13 +98,7 @@ function repoGit(){
 }
 
 function startGit(){
-  test -d .git/
-  if [ "$(echo $?)" -eq "1" ]; then
-    echo -e "\n${purpleColour} [*]${endColour}${yellowColour} el git se ha inicializado correctamente${endColour}"
-    ./.config/qtile/scriptsBash/main.sh $@
-  else
-    echo -e "\n ${purpleColour}[*]${endColour}${redColour} No se puede inicializar el git porque ya existe${endColour}"
-  fi
+  ~/./.config/qtile/scriptsBash/initGit.sh $@
 }
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
