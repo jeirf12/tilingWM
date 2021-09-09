@@ -77,24 +77,7 @@ source /usr/share/zsh-plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # Functions
 #-------------------------------
 function repoGit(){
-    test -d .git/
-    if [ "$(echo $?)" -eq "0" ]; then
-        git update-index -q --refresh
-        if ! git diff-index --quiet HEAD --; then
-            message="$1"
-            number="$(echo $message | wc -m)"
-            branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
-            if [ "$number" -gt 5 ]; then
-                git add . ; git commit -m "$message"; git push -u origin $branch
-            else
-                echo -e "\n${purpleColour}[*]${endColour}${yellowColour} Dígite un mensaje mayor a 5 caracteres${endColour}"
-            fi;
-        else
-            echo -e "\n${purpleColour}[*]${endColour}${greenColour} No hay cambios pendientes para subir${endColour}"
-        fi;
-    else
-        echo -e "\n${purpleColour}[*]${endColour}${redColour} Diríjase a un directorio válido${endColour}"
-    fi;
+  ~/./.config/qtile/scriptsBash/uploadGit.sh $@
 }
 
 function startGit(){
