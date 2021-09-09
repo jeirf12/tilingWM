@@ -5,6 +5,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+#Colores aplicables
+greenColour="\e[0;32m\033[1m"
+endColour="\033[0m\e[0m"
+redColour="\e[0;31m\033[1m"
+blueColour="\e[0;34m\033[1m"
+yellowColour="\e[0;33m\033[1m"
+purpleColour="\e[0;35m\033[1m"
+grayColour="\e[0;37m\033[1m"
+
 #EDITOR
 export EDITOR="/bin/nvim"
 
@@ -75,17 +84,27 @@ function repoGit(){
             message="$1"
             number="$(echo $message | wc -m)"
             branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
-            if [ "$number" -gt 4 ]; then
+            if [ "$number" -gt 5 ]; then
                 git add . ; git commit -m "$message"; git push -u origin $branch
             else
-                echo -e "\t[*] Dígite un mensaje mayor a 5 caracteres"
+                echo -e "\n${purpleColour}[*]${endColour}${yellowColour} Dígite un mensaje mayor a 5 caracteres${endColour}"
             fi;
         else
-            echo -e "\t[*] No hay cambios pendientes para subir"
+            echo -e "\n${purpleColour}[*]${endColour}${greenColour} No hay cambios pendientes para subir${endColour}"
         fi;
     else
-        echo -e "\t[*] Diríjase a un directorio válido"
+        echo -e "\n${purpleColour}[*]${endColour}${redColour} Diríjase a un directorio válido${endColour}"
     fi;
+}
+
+function startGit(){
+  test -d .git/
+  if [ "$(echo $?)" -eq "1" ]; then
+    echo -e "\n${purpleColour} [*]${endColour}${yellowColour} el git se ha inicializado correctamente${endColour}"
+    ./.config/qtile/scriptsBash/main.sh $@
+  else
+    echo -e "\n ${purpleColour}[*]${endColour}${redColour} No se puede inicializar el git porque ya existe${endColour}"
+  fi
 }
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
