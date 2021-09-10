@@ -34,7 +34,8 @@ function verifiedFolder(){
   test -d .git/
   if [ "$(echo $?)" -eq "0" ]; then
     git update-index -q --refresh
-    if ! git diff-index --quiet HEAD --; then
+    git diff-index --quiet HEAD --
+    if [ "$(echo $?)" -gt "0"  ] || [ "$(git clean -d -n | wc -l)" -gt "0" ]; then
       number="$(echo $message | wc -m)"
       branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
       if [ "$number" -gt 5 ]; then
