@@ -76,11 +76,11 @@ source /usr/share/zsh-plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 #-------------------------------
 # Functions
 #-------------------------------
-function repoGit(){
+function uploadGit(){
   /home/fallen/.config/qtile/scriptsBash/uploadGit.sh $@
 }
 
-function startGit(){
+function initGit(){
   /home/fallen/.config/qtile/scriptsBash/initGit.sh $@
 }
 

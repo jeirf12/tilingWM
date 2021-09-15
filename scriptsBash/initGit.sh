@@ -22,7 +22,7 @@ function ctrl_c(){
 
 # Muestra las opciones del comando
 function helpPanel(){
-  echo -e "\n${purpleColour} [*]${endColour}${yellowColour} Uso: ./startGit${endColour}"
+  echo -e "\n${purpleColour} [*]${endColour}${yellowColour} Uso: ./initGit${endColour}"
   echo -e "\n\t${purpleColour}-b${endColour}${redColour} \"nameBranch\"${endColour}${yellowColour}\t Especifica el nombre de la rama principal${endColour}"
 	echo -e "\t${purpleColour}-r${endColour}${redColour}  urlRemote${endColour}${yellowColour}\t Conecta el proyecto con el repositorio remoto especificado \n\t\t\t Nota: Si no se especifica la opción -b deja el nombre de la rama por defecto${endColour}"
 	echo -e "\t${purpleColour}-h${endColour}${yellowColour}\t\t Mostrar este panel de ayuda${endColour}\n"

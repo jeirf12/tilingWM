@@ -22,7 +22,7 @@ function ctrl_c(){
 
 # Muestra las opciones del comando
 function helpPanel(){
-  echo -e "\n${purpleColour} [*]${endColour}${yellowColour} Uso: ./repoGit${endColour}"
+  echo -e "\n${purpleColour} [*]${endColour}${yellowColour} Uso: ./uploadGit${endColour}"
   echo -e "\n\t${purpleColour} -m${endColour}${redColour} \"Message commit\"${endColour}${yellowColour}\t Especifica un mensaje para el commit${endColour}"
 	echo -e "\t${purpleColour} -h${endColour}${yellowColour}\t\t\t Muestra este panel de ayuda${endColour}\n"
 	tput cnorm; exit 0
