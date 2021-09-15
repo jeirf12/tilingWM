@@ -77,11 +77,11 @@ source /usr/share/zsh-plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # Functions
 #-------------------------------
 function repoGit(){
-  ~/./.config/qtile/scriptsBash/uploadGit.sh $@
+  /home/fallen/.config/qtile/scriptsBash/uploadGit.sh $@
 }
 
 function startGit(){
-  ~/./.config/qtile/scriptsBash/initGit.sh $@
+  /home/fallen/.config/qtile/scriptsBash/initGit.sh $@
 }
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
