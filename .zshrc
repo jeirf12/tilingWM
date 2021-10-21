@@ -54,7 +54,9 @@ alias l='lsd --group-dirs=first'
 alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
 alias lt='ls --tree'
-alias nv='/bin/nvim'
+alias nv='/usr/bin/nvim'
+alias v='/usr/bin/vim'
+alias airplane='/home/fallen/.config/qtile/scriptsBash/airplaneMode.sh'
 
 #-------------------------------
 # Settings AutoComplete

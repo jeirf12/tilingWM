@@ -93,6 +93,12 @@ keys = [Key(*key[0:]) for key in [
     ([],"XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
     ([],"XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
 
-    #-------------Keys pause--------------
+    #-------------Key pause--------------
     ([],"XF86AudioPlay", lazy.spawn("playerctl play-pause")),
+
+    #-------------Key next media--------------
+    ([],"XF86AudioNext", lazy.spawn("playerctl next")),
+
+    #-------------Key previous media--------------
+    ([],"XF86AudioPrev", lazy.spawn("playerctl previous")),
 ]]
