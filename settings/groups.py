@@ -22,8 +22,8 @@ from settings.keys import mod, keys
 # nf-mdi-layers
 
 groups = [Group(i) for i in ["   ", "   ", "   ", "   ", "   ", "   ", "   ", "   ", "   "]]
-# for i in ["   ", "   ", "   ", "   ", "   ", "   ", "   ", "   ", "   "]:
-#     if i==3:
+# for indice, i in enumerate(["   ", "   ", "   ", "   ", "   ", "   ", "   ", "   ", "   "], 1):
+#     if indice == 2:
 #         groups.append(Group(i, matches=[Match(title=["firefox"])]))
 #     else:
 #         groups.append(Group(i))

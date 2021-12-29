@@ -28,7 +28,7 @@ def powerline(fg="light", bg="dark"):
         **base(fg, bg),
         text="", # Icon: nf-oct-triangle_left
         fontsize=37,
-        padding=-2
+        padding=-4
     )
 
 
@@ -46,7 +46,7 @@ def workspaces():
             borderwidth=1,
             active=colors['active'],
             inactive=colors['inactive'],
-            rounded=False,
+            rounded=True,
             highlight_method='block',
             urgent_alert_method='block',
             urgent_border=colors['urgent'],
@@ -126,8 +126,8 @@ secondary_widgets = [
 ]
 
 widget_defaults = {
-    'font': 'UbuntuMono Nerd Font Bold',
-    'fontsize': 14,
+    'font': 'Hack Nerd Font Bold',
+    'fontsize': 12,
     'padding': 1,
 }
 extension_defaults = widget_defaults.copy()
