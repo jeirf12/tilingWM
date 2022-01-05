@@ -57,6 +57,10 @@ alias lt='ls --tree'
 alias nv='/usr/bin/nvim'
 alias v='/usr/bin/vim'
 alias airplane='/home/fallen/.config/qtile/scriptsBash/airplaneMode.sh'
+alias g='/usr/bin/git'
+alias mkmodule='/home/fallen/.config/qtile/scriptsBash/mkmodule.sh'
+alias uploadGit='/home/fallen/.config/qtile/scriptsBash/uploadGit.sh'
+alias initGit='/home/fallen/.config/qtile/scriptsBash/initGit.sh'
 
 #-------------------------------
 # Settings AutoComplete
@@ -74,17 +78,6 @@ source /usr/share/zsh-plugins/sudo.plugins.zsh
 source /usr/share/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-
-#-------------------------------
-# Functions
-#-------------------------------
-function uploadGit(){
-  /home/fallen/.config/qtile/scriptsBash/uploadGit.sh $@
-}
-
-function initGit(){
-  /home/fallen/.config/qtile/scriptsBash/initGit.sh $@
-}
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
