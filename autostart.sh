@@ -1,5 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
+if xrandr | grep "HDMI-1 disconnected"; then
+  xrandr --addmode HDMI-1 1366x768
+  xrandr --output eDP-1 --primary --mode 1366x768 --pos 0x0 --output HDMI-1 --mode 1366x768 --pos 0x768
+fi
 # systray battery icon
 # cbatticon -u 5 &
 # systray volume
