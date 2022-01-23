@@ -61,6 +61,7 @@ alias g='/usr/bin/git'
 alias mkmodule='/home/fallen/.config/qtile/scriptsBash/mkmodule.sh'
 alias uploadGit='/home/fallen/.config/qtile/scriptsBash/uploadGit.sh'
 alias initGit='/home/fallen/.config/qtile/scriptsBash/initGit.sh'
+alias config='nv .vimrc'
 
 #-------------------------------
 # Settings AutoComplete
