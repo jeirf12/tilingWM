@@ -60,8 +60,8 @@ keys = [Key(*key[0:]) for key in [
     ([mod, "shift"], "m", lazy.spawn("rofi -show")),
 
     # Browser
-    ([mod], "f", lazy.spawn("firejail firefox")),
-    ([mod], "b", lazy.spawn("firejail brave")),
+    ([mod], "f", lazy.spawn("firejail --rlimit-as=800000000000 firefox")),
+    ([mod], "b", lazy.spawn("firejail --rlimit-as=800000000 brave")),
 
     # File Explorer
     ([mod], "e", lazy.spawn("caja")),
