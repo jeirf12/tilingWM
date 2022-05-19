@@ -12,8 +12,8 @@ directory=$1
 file=$2
 nameFile=$(echo $file | tr -d '.x')
 
-dirServer=$directory/servidor
 dirClient=$directory/cliente
+dirServer=$directory/servidor
 
 mkdir -p $dirClient
 mkdir -p $dirServer
@@ -28,12 +28,12 @@ rm cliente/${nameFile}_svc.c
 cp $nameFile* servidor/
 rm servidor/${nameFile}_clnt.c
 
-pushd servidor/ > /dev/null 2>&1
+pushd cliente/ > /dev/null 2>&1
 rpcgen -Sc $file > cliente.c
 rpcgen -Sm $file > makeC
 popd > /dev/null 2>&1
 
-pushd cliente/ > /dev/null 2>&1
+pushd servidor/ > /dev/null 2>&1
 rpcgen -Ss $file > servidor.c
 rpcgen -Sm $file > makeS
 popd > /dev/null 2>&1
