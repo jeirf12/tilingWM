@@ -1,7 +1,7 @@
 #!/bin/bash
+# Autor: { Fallen }
 
 #Comando para crear un modulo para el framework laminas php
-# Autor: { Fallen }
 # Colores
 purpleColour="\e[0;35m\033[1m"
 greenColour="\e[0;32m\033[1m"

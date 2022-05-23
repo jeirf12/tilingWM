@@ -1,4 +1,5 @@
 #!/bin/bash
+# Autor: { Fallen }
 
 # Generador de archivos rpc distribuidos en carpetas
 # servidor y cliente donde se almacena los stub, las plantillas
