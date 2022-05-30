@@ -28,10 +28,11 @@ function ctrl_c() {
 # Muestra las opciones del comando
 function helpme() {
   echo -e "\n${purpleColour} #${endColour}${yellowColour} Uso: ./comp ${endColour}"
-  echo -e "\n\t${purpleColour} -c${endColour}${yellowColour} \"Command specific\"${endColour}${redColour}\t Especifica un comando definido en el makefile${endColour}"
+  echo -e "\n\t${purpleColour} -a${endColour}${yellowColour} \"Command specific\"${endColour}${redColour}\t\t Especifica un comando definido en el makefile${endColour}"
   echo -e "\n\t${purpleColour} -s${endColour}${yellowColour} \"name server specific\"${endColour}${redColour}\t Especifica un nombre del servidor a compilar${endColour}"
-  echo -e "\n\t${purpleColour} -t${endColour}${yellowColour} \"name servers\"${endColour}${redColour}\t Especifica varios nombres de servidores a compilar${endColour}"
-  echo -e "\n${purpleColour} Note:${endColour}${yellowColour} Al utilizar sin banderas, por defecto va a compilar un  en la carpeta cliente y carpeta servidor ./comp ${endColour}"
+  echo -e "\n\t${purpleColour} -c${endColour}${yellowColour} \"name client specific\"${endColour}${redColour}\t Especifica un nombre del cliente a compilar${endColour}"
+  echo -e "\n\t${purpleColour} -t${endColour}${yellowColour} \"name servers\"${endColour}${redColour}\t\t Especifica varios nombres de servidores a compilar${endColour}"
+  echo -e "\n\t${purpleColour} Nota:${endColour}${yellowColour} Al utilizar el comando sin banderas, por defecto va a buscar y compilar en la carpeta cliente y carpeta servidor del actual directorio\t ./comp ${endColour}"
   exit 0
 }
 
